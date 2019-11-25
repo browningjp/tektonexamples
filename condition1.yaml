@@ -1,0 +1,12 @@
+apiVersion: tekton.dev/v1alpha1
+kind: Condition
+metadata:
+  name: condition1
+spec:
+  params:
+    - name: "path"
+      type: string
+  check:
+    image: centos
+    command: ["/bin/sh"]
+    args: ['-c', 'test -f $(params.path)']

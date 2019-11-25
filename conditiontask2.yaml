@@ -1,0 +1,32 @@
+apiVersion: tekton.dev/v1alpha1
+kind: Task
+metadata:
+  name: conditiontask2
+spec:
+  steps:
+    - name: pwd
+      image: centos
+      command:
+        - pwd
+    - name: ls
+      image: centos
+      command:
+        - ls
+    - name: touch
+      image: centos
+      command:
+        - touch
+      args:
+      - "/workspace/newfile.txt"
+    - name: echo
+      image: centos
+      command:
+        - echo
+      args:
+        - "This is a multi-step test"
+    - name: check
+      image: centos
+      command:
+        - ls
+      args:
+        - "-A"  

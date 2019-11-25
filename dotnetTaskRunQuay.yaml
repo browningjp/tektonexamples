@@ -1,0 +1,27 @@
+apiVersion: tekton.dev/v1alpha1
+kind: TaskRun
+metadata:
+  name: s2i-dotnet1-quay-taskrun
+spec:
+  # Use service account with git and image repo credentials
+  serviceAccount: test-build-robot
+  taskRef:
+    name: s2i-dotnet1
+  inputs:
+    resources:
+    - name: source
+      resourceSpec:
+        type: git
+        params:
+        - name: url
+          value: https://github.com/utherp0/meowworldforum
+  outputs:
+    resources:
+    - name: image
+      resourceSpec:
+        type: image
+        params:
+        - name: url
+          value: quay.io/ilawson/meowworldtekton
+    #    - name: TLSVERIFY
+    #      value: "false"

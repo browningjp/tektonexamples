@@ -1,0 +1,10 @@
+apiVersion: tekton.dev/v1alpha1
+kind: Task
+metadata:
+  name: conditiontask1
+spec:
+  steps:
+    - name: pwd
+      image: alpine
+      command:
+        - pwd

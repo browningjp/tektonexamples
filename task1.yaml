@@ -1,7 +1,7 @@
 apiVersion: tekton.dev/v1alpha1
 kind: Task
 metadata:
-  name: echo-hello-world
+  name: task1
 spec:
   steps:
     - name: echo

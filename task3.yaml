@@ -1,7 +1,7 @@
 apiVersion: tekton.dev/v1alpha1
 kind: Task
 metadata:
-  name: echo-goodbye-world
+  name: task3
 spec:
   steps:
     - name: echo

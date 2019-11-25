@@ -1,7 +1,7 @@
 apiVersion: tekton.dev/v1alpha1
 kind: PipelineRun
 metadata:
-  name: run1
+  name: conditionpipelineruntest1
 spec:
   pipelineRef:
-    name: pipeline1
+    name: conditionpipeline1

@@ -1,0 +1,7 @@
+apiVersion: tekton.dev/v1alpha1
+kind: TaskRun
+metadata:
+  name: conditiontaskruntest2
+spec:
+  taskRef:
+    name: conditiontask2

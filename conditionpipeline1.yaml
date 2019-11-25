@@ -1,0 +1,14 @@
+apiVersion: tekton.dev/v1alpha1
+kind: Pipeline
+metadata:
+  name: conditionpipeline1
+spec:
+  tasks:
+    - name: multisteptest
+      taskRef:
+        name: conditiontask2
+      conditions:
+        - conditionRef: "condition1"
+          params:
+            - name: "path"
+              value: "/workspace/newfile.txt"

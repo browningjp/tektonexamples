@@ -1,19 +1,19 @@
 apiVersion: tekton.dev/v1alpha1
 kind: Pipeline
 metadata:
-  name: echo-pipeline-example
+  name: pipeline1
 spec:
   tasks:
   - name: hello
     taskRef:
-      name: echo-hello-world
+      name: task1
   - name: uth-message
     taskRef:
-      name: echo-uth-message
+      name: task2
     runAfter:
       - hello
   - name: goodbye
     taskref:
-      name: echo-goodbye-world
+      name: task3
     runAfter:
       - uth-message
